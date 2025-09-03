@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+// Update the path below to the actual location of FlowbiteService, for example:
+import { FlowbiteService } from '../app/core/services/flowbite/flowbite';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  // Add FlowbiteService to providers
 })
 export class App {
-  protected readonly title = signal('e-commerce');
+ 
+   constructor(private flowbiteService: FlowbiteService) {}
+   ngOnInit(): void {
+    this.flowbiteService.loadFlowbite((flowbite) => {
+      initFlowbite();
+    });
+}
 }
