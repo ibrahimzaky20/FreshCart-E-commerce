@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class=" flex  lg:  items-center">
+    <div class="w-full "><app-slider></app-slider></div>
+</div>
+<app-advertisment></app-advertisment>
+<app-category-slider [category]="someCategory()"></app-category-slider>
+<h2 class="text-5xl font-semibold text-center text-green-700 my-4">Most Popular Products</h2>
+<app-products-shared [products]="someProducts()"></app-products-shared>
+<div class="arrow w-full flex justify-center mb-5 ">
+    
+    <button class="next bg-green-700 relative right-0 text-white p-3 cursor-pointer rounded-full hover:bg-green-800" (click)="showAll()"><i class="fa fa-chevron-right"></i> See All Products</button>
+</div>
+

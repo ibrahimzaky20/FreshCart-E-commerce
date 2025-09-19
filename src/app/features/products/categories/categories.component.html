@@ -1,1 +1,15 @@
-<p>categories works!</p>
+<h2 class="text-5xl font-semibold text-center text-green-700 my-4">All Categories</h2>
+<div class="parent grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2  gap-4 p-5">
+    @for (item of allCategories(); track item._id) {
+    
+<a routerLink="/products" class="flex flex-col items-center bg-gray-100 border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl  hover:bg-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg  md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" [src]="item.image" alt="">
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.name}}</h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{item.slug}}</p>
+    </div>
+</a>
+
+
+}
+</div>

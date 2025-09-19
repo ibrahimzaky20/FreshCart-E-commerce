@@ -1,0 +1,14 @@
+<h2 class="text-5xl font-semibold text-center text-green-700  mb-6">Our Popular Categories</h2>
+<owl-carousel-o [options]="customOptions">
+
+    @for (slide of category; track slide._id) {
+      <ng-template carouselSlide>
+        <img [src]="slide.image" class="h-56" [alt]="slide.name" [title]="slide.name">
+        <h3 class="text-green-700 text-center text-2xl">{{slide.name}}</h3>
+      </ng-template>
+    }
+
+  </owl-carousel-o>
+  <div class="parent flex justify-center"><button class="next bg-green-700 items-center  text-white p-3 cursor-pointer rounded-full hover:bg-green-800" (click)="showAll()"><i class="fa fa-chevron-right"></i> See All Categories</button></div>
+  
+  
