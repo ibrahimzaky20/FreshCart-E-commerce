@@ -1,4 +1,4 @@
-import { Component, signal, Inject,NgModule } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 // Update the path below to the actual location of FlowbiteService, for example:
 import { FlowbiteService } from '../app/core/services/flowbite/flowbite';
@@ -11,7 +11,8 @@ import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent,NgxSpinnerModule],
+  standalone: true,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent ,NgxSpinnerModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   // Add FlowbiteService to providers
@@ -22,6 +23,11 @@ export class App {
    ngOnInit(): void {
     this.flowbiteService.loadFlowbite((flowbite) => {
       initFlowbite();
+      this.ngxSpinnerService.show()
+      setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.ngxSpinnerService.hide();
+    }, 5000);
     });
     
 }

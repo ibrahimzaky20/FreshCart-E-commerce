@@ -5,15 +5,15 @@
 <div class="parent grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-4 p-5">
     @for (item of allBrands(); track item._id) {
     
-<div class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
+<div class="card max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm ">
+    <a routerLink="/products">
         <img class="rounded-t-lg" [src]="item.image" alt="" />
     </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{item.name}}</h5>
+    <div class="p-3" >
+        <a routerLink="/products">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">{{item.name}}</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{item.slug}}</p>
+        <p class="mb-3 font-normal text-gray-700 ">{{item.slug}}</p>
         
     </div>
 </div>

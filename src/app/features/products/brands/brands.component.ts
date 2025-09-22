@@ -1,10 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { BrandsService } from '../../../core/services/brands/brands.service';
 import { Category } from '../../../core/interfaces/products';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-brands',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './brands.component.html',
   styleUrl: './brands.component.scss'
 })
