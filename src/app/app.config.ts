@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter, withInMemoryScrolling, withViewTransitions } from '@angular/router';
+import { provideRouter, withHashLocation, withInMemoryScrolling, withViewTransitions } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -14,8 +14,8 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideRouter(routes,withViewTransitions(),withInMemoryScrolling({scrollPositionRestoration:'top'})), provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch(),withInterceptors([headerInterceptor,errorInterceptor,loadingInterceptor])),provideAnimations(),provideToastr(),
+    provideRouter(routes,withViewTransitions(),withInMemoryScrolling({scrollPositionRestoration:'top'}),withHashLocation()), provideClientHydration(withEventReplay()),
+    provideHttpClient(withFetch(),withInterceptors([headerInterceptor,errorInterceptor,loadingInterceptor])),provideAnimations(),provideToastr()
     
   ]
 };
