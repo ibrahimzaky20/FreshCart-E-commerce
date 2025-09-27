@@ -13,7 +13,8 @@ import { User } from '../../interfaces/user';
 export class AuthService {
   constructor(@Inject(PLATFORM_ID) private platformId: any){
     if(isPlatformBrowser(this.platformId)){
-      this.setUserData();
+      if(localStorage.getItem('userToken')){this.setUserData();}
+      
     }
   }
   private httpClient :HttpClient = inject(HttpClient);

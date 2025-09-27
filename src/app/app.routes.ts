@@ -10,6 +10,7 @@ import { NotfoundComponent } from './features/products/notfound/notfound.compone
 import { authGuard } from './core/gaurd/auth.guard';
 import { ProductsSharedComponent } from './shared/components/products-shared/products-shared.component';
 import { AllProductsComponent } from './features/products/all-products/all-products.component';
+import { OrderComponent } from './features/products/order/order/order.component';
 
 export const routes: Routes = [
     {path:"",redirectTo:"home",pathMatch:"full"},
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path:"cart",component:CartComponent,title:"Cart",canActivate:[authGuard]},
     {path:'details/:pId',component:ProductDetailsComponent,title:"ProductDetails",canActivate:[authGuard]},
     {path:"products",component:AllProductsComponent,title:"Products",canActivate:[authGuard]},
+    {path:"order/:cartId",component:OrderComponent,title:"order",canActivate:[authGuard]},
     {path:"**",component:NotfoundComponent,title:"not found"}
     
 

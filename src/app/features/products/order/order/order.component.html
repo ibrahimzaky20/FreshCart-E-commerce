@@ -1,0 +1,19 @@
+
+<div class="w-9/12 mx-auto">
+    <form [formGroup]="addressForm" (ngSubmit)="checkOut()" class="my-4">
+    <div class="mb-3">
+        <label class=" text-green-700 mb-2 text-sm font-medium text-gray-900 ">Details:</label>
+        <input formControlName="details" type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"  />
+    </div> 
+    <div class="mb-3">
+        <label class=" text-green-700 mb-2 text-sm font-medium text-gray-900 ">Phone:</label>
+        <input formControlName="phone" type="tel"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"  />
+    </div> 
+    <div class="mb-3">
+        <label class=" text-green-700 mb-2 text-sm font-medium text-gray-900 ">City:</label>
+        <input formControlName="city" type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"  />
+    </div> 
+    <button type="submit" class="cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CheckOut</button>
+
+</form>
+</div>

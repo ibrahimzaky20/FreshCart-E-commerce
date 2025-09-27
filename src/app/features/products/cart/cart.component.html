@@ -1,9 +1,10 @@
 
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <div class="flex flex-col justify-center items-center ">
+    <div class="flex justify-between ">
         <h2 class="text-4xl font-semibold text-green-700 text-center my-3 ">Total Price:{{totalPrice()}}</h2>
         <button type="button" (click)="clearCart()" class="my-3 cursor-pointer focus:outline-none text-white bg-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Clear Cart</button>
+        <button type="button" (click)="requestOrder()" class="my-3 cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800  font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Order Now</button>
         
     </div>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">

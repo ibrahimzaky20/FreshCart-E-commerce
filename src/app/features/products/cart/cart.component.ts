@@ -2,6 +2,8 @@ import { Component, inject, signal } from '@angular/core';
 import { CartService } from '../../../core/services/cart/cart.service';
 import { IPcart, Product2 } from '../../../core/interfaces/cart';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
 
 
 
@@ -14,10 +16,13 @@ import { ToastrService } from 'ngx-toastr';
 export class CartComponent {
   private cartService:CartService=inject(CartService);
   private toastr:ToastrService=inject(ToastrService)
+  private router:Router=inject(Router)
   cartItems=signal<Product2[]>([])
   totalPrice=signal<IPcart[]>([])
+  cartId=signal<string>('')
   ngOnInit():void {
     this.getAllCart()
+    
     
 
   }
@@ -34,6 +39,7 @@ export class CartComponent {
       next:(res)=>{
         this.cartItems.set(res.data.products)
         this.totalPrice.set(res.data.totalCartPrice)
+        this.cartId.set(res.cartId)
       }
     })
   }
@@ -60,6 +66,9 @@ export class CartComponent {
           this.getAllCart()
       }
     })
+  }
+  requestOrder(){
+    this.router.navigate(['/order',this.cartId()])
   }
 
 

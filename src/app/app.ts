@@ -23,11 +23,6 @@ export class App {
    ngOnInit(): void {
     this.flowbiteService.loadFlowbite((flowbite) => {
       initFlowbite();
-      this.ngxSpinnerService.show()
-      setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.ngxSpinnerService.hide();
-    }, 5000);
     });
     
 }
